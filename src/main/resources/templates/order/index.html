@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>OrderList</title>
+    <meta charset="utf-8"></meta>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container">
+    <h2>Order Table</h2>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Id</th>
+            <th>Product Name</th>
+            <th>Ordered Date</th>
+
+
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="order : ${orderList}">
+            <td><p th:text="${order.id}"></p></td>
+            <td><p th:text="${order.product.name}"></p></td>
+            <td><p th:text="${order.orderDay}"></p></td>
+        </tr>
+        </tbody>
+    </table>
+
+</div>
+</body>
+</html>
+

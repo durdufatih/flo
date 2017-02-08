@@ -5,7 +5,7 @@ import com.flo.product.Product;
 import javax.persistence.*;
 
 /**
- * Created by fatihdurdu on 08/02/17.
+ * Bu entity admin tarafındadır. Sepetten onaylanan ödemeleri order olarak kaydeder.
  */
 @Entity
 @Table(name="tbl_order")

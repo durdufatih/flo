@@ -10,7 +10,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 /**
+ *
  * Created by fatihdurdu on 07/02/17.
+ *
+ * Ürünlerin viewler ile olan bağlantılarını yönetir.
  */
 @Controller
 public class ProductController {
@@ -21,6 +24,11 @@ public class ProductController {
     @Autowired
     private CartRepository cartRepository;
 
+    /**
+     * Be metod homepage'dir .Ürünlerin tamamını listeler.
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/", method = RequestMethod.GET)
     public String hello(Model model) {
 
@@ -32,6 +40,12 @@ public class ProductController {
         return "product/index";
     }
 
+    /**
+     * Verilen id'ye göre ürün detayını getirir
+     * @param id verilen is
+     * @param model
+     * @return String page
+     */
     @RequestMapping(value = "/detail/{id}", method = RequestMethod.GET)
     public String detail(@PathVariable String id, Model model) {
 
@@ -39,6 +53,12 @@ public class ProductController {
         return "product/detail";
     }
 
+    /**
+     * Bu metod verilen ürün id'sine göre sepete ekleme işlemi yapar.
+     * @param id
+     * @param model
+     * @return
+     */
     @RequestMapping(value = "/addcart/{id}", method = RequestMethod.GET)
     public String addcart(@PathVariable String id, Model model) {
 

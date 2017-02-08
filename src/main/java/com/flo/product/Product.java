@@ -4,6 +4,7 @@ import javax.persistence.*;
 
 /**
  * Created by fatihdurdu on 07/02/17.
+ * Bu entity elimizde olan ürünler içindir.
  */
 @Entity
 @Table(name="group_table")

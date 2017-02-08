@@ -17,6 +17,8 @@ import java.util.Date;
 
 /**
  * Created by fatihdurdu on 08/02/17.
+ *
+ * Bu controller <b>Order</b> entity'sinin view ile olan işlemlerini yönetir
  */
 @Controller
 public class OrderController {
@@ -28,6 +30,11 @@ public class OrderController {
     @Autowired
     private CartRepository cartRepository;
 
+    /**
+     * Bu metod order bilgilerinin tamamını döner
+     * @param model
+     * @return String
+     */
     @RequestMapping(value = "/orderList",method = RequestMethod.GET)
     public String list(Model model){
         model.addAttribute("orderList",orderRepository.findAll());
@@ -36,6 +43,12 @@ public class OrderController {
 
     }
 
+    /**
+     * Bu metod verilen cart entity'sinin id'sine göre satın alma işlemi yapar.
+     * Satın alama gerçekleşirse cart verilerinden verilen idye göre siler.
+     * @param id satın alınan sepetteki Cart entity'sinin idsi
+     * @return
+     */
     @RequestMapping(value = "/buy/{id}",method = RequestMethod.GET)
     public String buy(@PathVariable String id){
         DateFormat df = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");

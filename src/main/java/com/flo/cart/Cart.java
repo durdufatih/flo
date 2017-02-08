@@ -6,6 +6,8 @@ import javax.persistence.*;
 
 /**
  * Created by fatihdurdu on 08/02/17.
+ * Bu Entity sepet bilgilerini tutar .
+ * Bu Sepet bilgilerinde Ürün bilgileri ve Auto Incrediment Id bulunur.
  */
 @Entity
 @Table(name="tbl_cart")

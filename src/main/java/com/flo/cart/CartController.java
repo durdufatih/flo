@@ -6,13 +6,20 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 /**
- * Created by fatihdurdu on 08/02/17.
+ * Bu Controller <b>Cart</b> Entity'sinin html sayfalarla veri alışverişi sağlar
+ *
  */
 @Controller
 public class CartController {
 
     @Autowired
     private CartRepository cartRepository;
+
+    /**
+     * Bu metod cart'ta bulunan butun verileri döner.
+     * @param model
+     * @return String
+     */
     @RequestMapping(value = "/cart")
     private String cart(Model model){
         model.addAttribute("cartList",cartRepository.findAll());
